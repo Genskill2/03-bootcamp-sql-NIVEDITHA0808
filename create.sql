@@ -1,20 +1,22 @@
+PRAGMA foreign_keys;
+PRAGMA foreign_keys = ON;
 --publisher table
 CREATE TABLE publisher(
-          id INT PRIMARY KEY AUTOINCREMENT,
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
           name text,
           country text
 );
 
 --books table
 CREATE TABLE books(
-           id INT PRIMARY KEY AUTOINCREMENT,
+           id INTEGER PRIMARY KEY AUTOINCREMENT,
            title text,
            publisher_id INT REFERENCES publisher (id) ON DELETE SET NULL
 );
 
 --subjects table
 CREATE TABLE subjects(
-           id INT PRIMARY KEY AUTOINCREMENT,
+           id INTEGER PRIMARY KEY AUTOINCREMENT,
            name text
 );
 
